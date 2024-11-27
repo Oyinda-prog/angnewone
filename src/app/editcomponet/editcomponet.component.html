@@ -1,0 +1,35 @@
+<p>editcomponet works!</p>
+<!-- <p>contact-app works!</p> -->
+<div class="container-fluid">
+<div class="row shadow my-5 p-3">
+    <div class="col-2 shadow">
+        <h1 class="text-center text-primary">Edit Contact App</h1>
+        <input type="text" [(ngModel)]="firstname" placeholder="firstname" class="form-control my-2">
+        <input type="text" [(ngModel)]="lastname" placeholder="Lastname" class="form-control my-2">
+        <input type="text" [(ngModel)]="email" placeholder="Email" class="form-control my-2">
+        <input type="text" [(ngModel)]="phonenumber" placeholder="phonenumber" class="form-control my-2">
+        <a routerLink="/contact"><button class="btn btn-outline-primary w-100 p-3" (click)="upd()">Update Contac-Appt</button> </a>
+    </div>
+    <div class="col-10 shadow" > 
+        <h1 class="text-center text-primary">Contact Details</h1>
+        <hr>
+        <div class="row" >
+            <div class="col-3">
+               <p>{{this.obj.Firstname}}</p>
+            </div>
+            <div class="col-3">
+                
+            </div>
+            <div class="col-3">
+                 
+            </div>
+            <div class="col-3">
+   <!-- <button class="btn btn-outline-danger" (click)="upd()"></button> -->
+
+            </div>
+
+        </div>
+    </div>
+    
+</div>
+</div>

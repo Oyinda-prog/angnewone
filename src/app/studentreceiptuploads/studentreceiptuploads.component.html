@@ -1,0 +1,37 @@
+<p>studentreceiptuploads works!</p>
+
+<div class="container">
+    <div class="col-8 mx-auto shadow p-4">
+        <h1 class="text-center text-success mb-5">Upload Receipts of Payment</h1>
+       <div class="col-6 mx-auto mt-5">
+        <input type="file" class="form-control my-3" required (change)="fileselected($event)" required #fname="ngModel" [(ngModel)]="receipt">
+        <button class="btn btn-success w-100 mt-5" (click)="upload()">Upload Receipts</button>
+      <p class="shadow text-center text-success mb-5 p-4 mt-5"><span>{{msg}}</span></p>
+      <a routerLink="/studentdashboard" class="btn btn-outline-success mt-5">Go back to dashboard</a>
+       </div> 
+       <h3 class="p-2 text-success text-center mt-5" *ngIf="currentreceipt.length==0">No receipts Uploaded yet</h3>
+    </div>
+    
+<div>
+   
+<table class="table table-striped mt-5">
+    <tr *ngIf="currentreceipt.length>0">
+        <td>S/N</td>
+        <td>Unique ID</td>
+        <td>Status</td>
+        <td>Receipts Uploaded</td>
+    </tr>
+    <tr *ngFor="let receipt of currentreceipt, let i=index">
+        <td>{{i+1}}</td>
+        <td>{{receipt.uniqueid}}</td>
+        <td>{{receipt.status}}</td>
+        <td>
+            <img src="{{receipt.receipt}}" alt="" width="400px" height="400px">
+        </td>
+
+    </tr>
+</table>
+</div>
+</div>
+
+

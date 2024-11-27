@@ -1,0 +1,54 @@
+
+<div class="container">
+    <div class="col-6 mx-auto shadow p-3">
+        <h1 class="text-success text-center">NoteKeep</h1>
+        <div>
+            <form [formGroup]="formone">
+<input type="text" class="form-control my-2" placeholder="Title" formControlName="title" name="content">
+<textarea name="content" id="" cols="30" rows="10" placeholder="Enter note......" class="form-control my-2" formControlName="content"></textarea>
+<button class="btn btn-outline-success w-100" (click)="create()">Create Noteapp</button>
+            </form>
+            <p class="text-center text-success shadow p-4 m-5">{{msg}}</p>
+        </div>
+<div *ngFor="let note of this.studentarray[studentindex].notekeep, let i=index" class="shadow p-3 mt-5">
+<p class="text-muted">Title: {{note.title}}</p>
+<button class="btn btn-outline-success" (click)="sendindex(i,note)">view note</button>
+<button class="btn btn-outline-danger mx-2" (click)="del(i)">Delete</button>
+<button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editty(i,note)">Edit</button>
+</div>
+    </div>
+
+</div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="col-10 mx-auto shadow p-3">
+                <h1 class="text-success text-center">Update Note</h1>
+                <div>
+                    <form [formGroup]="formtwo">
+        <input type="text" class="form-control my-2" placeholder="Title" formControlName="title" name="content" value="{{this.title}}">
+        <textarea name="content" id="" cols="30" rows="10" placeholder="Enter note......" class="form-control my-2 shadow-none" formControlName="content" value="{{this.content}}"></textarea>
+        <button class="btn btn-outline-success w-100" (click)="savechanges()" data-bs-dismiss="modal">Save Changes</button>
+        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+
+                    </form>
+                </div>
+        
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+

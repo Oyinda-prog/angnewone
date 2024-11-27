@@ -1,0 +1,30 @@
+<p>adminresourses works!</p>
+
+<div class="container">
+    <div class="col-8 mx-auto shadow p-4">
+        <h1 class="text-center text-success mb-5">Update Profile Picture</h1>
+       <div class="col-6 mx-auto mt-5">
+        
+        <input type="file" (change)="onFileSelected($event)" accept="video/*" class="form-control my-2">
+
+        <select name="" id="" [(ngModel)]="department" class="form-select">
+            <option value="Science Department">Science Department</option>
+            <option value="Arts Department">Arts Department</option>
+            <option value="Commercial">Commercial</option>
+            
+        </select>
+        <button class="btn-outline-success" (click)="sendvideo()">Upload Video</button>
+      <a routerLink="/studentdashboard" class="btn btn-outline-success mt-5">Go back to dashboard</a>
+       </div>
+       <div>
+        
+        <!-- <div *ngIf="videoUrl">
+          <h3>Uploaded Video:</h3>
+          <video [src]="videoUrl" controls width="600"></video>
+        </div>
+      </div> -->
+      
+    </div>
+    <p>{{msg}}</p>
+</div>
+

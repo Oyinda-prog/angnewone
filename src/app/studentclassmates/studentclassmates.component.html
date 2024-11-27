@@ -1,0 +1,30 @@
+<div class="col-9 mx-auto">
+    <h2 class="text-success text-center shadow p-4 m-5">{{msg}}</h2>
+    <h1 class="text-center text-success m-5" *ngIf="this.msg!=='No classmates yet'">View Classmates</h1>
+    <table class="table table-striped table-success table-bordered" *ngIf="this.msg!=='No classmates yet' ">
+        <tr class="text-success">
+            <th>Serial Number</th>
+            <th>Registration Number</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Class</th>
+            <th>Profile Picture</th>
+        </tr>
+    <tr class="text-success" *ngFor="let classmates of this.classmates, let i=index">
+        <td>{{i+1}}</td>
+        <td>{{classmates.registrationnumber}}</td>
+        <td>{{classmates.fullname}}</td>
+        <td>{{classmates.email}}</td>
+        <td>{{classmates.phonenumber}}</td>
+        <td>{{classmates.gender}}</td>
+        <td>{{classmates.age}}</td>
+        <td>{{classmates.class}}</td>
+        <td><img [src]="classmates.image!=null ? classmates.image : '/assets/images/download.jpeg'" alt="" width="100px" height="100px" style="border-radius: 100%;"></td>
+
+    </tr>
+</table>
+
+</div>

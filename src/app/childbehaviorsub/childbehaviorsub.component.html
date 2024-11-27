@@ -1,0 +1,42 @@
+<p>childbehaviorsub works!</p>
+<div>{{data}}</div>
+
+<input type="text" [(ngModel)]="firstnam">
+<input type="text" [(ngModel)]="lastname">
+<button>send</button>
+
+<form action="">
+<input type="text" [(ngModel)]="firstnam" class="form-control my-2" #fname="ngModel" minlength="7" [class.is-valid]="fname.valid && fname.touched" [class.is-invalid]="fname.invalid" name="ftname">
+{{fname.untouched}}
+{{fname.pristine}}
+{{fname.dirty}}
+{{fname.touched}}
+<div *ngIf="fname.invalid && (fname.dirty||fname.touched)" class="alert">
+    <span *ngIf="fname.errors?.['minlength']">This is not enough</span>
+<div *ngIf="fname.hasError('minlength')">First name min length is 2</div>
+</div>
+<input type="text" [(ngModel)]="lastname" class="form-control my-2" #lname="ngModel" maxlength="9" name="ltname" [class.is-valid]="lname.valid" [class.is-invalid]="lname.invalid" minlength="2">
+<input type="text" class="form-control my-2" [(ngModel)]="emil" #email="ngModel" required name="email">
+<button class="btn btn-primary w-100">send</button>
+
+ 
+</form>
+<div>
+    <h1>Reactive Form</h1>
+    <form [formGroup]="one">
+<input name="fname" type="text" class="form-control my-2" formControlName="fname" [class.is-valid]="one.get('fname')?.valid" [class.is-invalid]="one.get('fname')?.invalid && one.get('fname')?.dirty ">
+ <div *ngIf="one.get('fname')?.invalid && one.get('fname')?.dirty ">
+<span *ngIf="one.get('fname')?.hasError('required')">This field is required</span>
+
+<span *ngIf="one.get('fname')?.hasError('maxlength')">The maximum length required is 4</span>
+ </div>
+<input type="text" class="form-control my-2" formControlName="age"name="age" [class.is-valid]="one.get('age')?.valid" [class.is-invalid]="one.get('age')?.invalid">
+<!-- <div *ngIf="one.get('fname')?.invalid && one.get('fname')?.dirty">
+    <span *ngIf="one.get('fname')?.errors?.['required']">This field is required</span>
+
+</div> -->
+<input type="text" name="lname" class="form-control my-2" formControlName="lname"> 
+<button class="btn btn-danger text-white" (click)="sub()">SEND</button>
+    </form>
+</div>
+

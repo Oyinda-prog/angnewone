@@ -1,0 +1,61 @@
+<p>studentcourse works!</p>
+<div class="container">
+    <div>
+        <h1>Select list of courses</h1>
+        
+        <select name="" id="" [(ngModel)]="selectedcourses" multiple class="form-select">
+            <option value="Agricultural Science">Agricultural Science</option>
+            <option value="Animal Husbandry">Animal Husbandry</option>
+            <option value="Arabic">Arabic</option>
+            <option value="Basic Science">Basic Science</option>
+            <option value="Biology">Biology</option>
+            <option value="Bookkeeping">Bookkeeping</option>
+            <option value="Business Studies">Business Studies</option>
+            <option value="Chemistry">Chemistry</option>
+            <option value="Christian Religion Studies (CRS)">Christian Religion Studies (CRS)</option>
+            <option value="Civic Education">Civic Education</option>
+            <option value="Commerce">Commerce</option>
+            <option value="Computer Studies">Computer Studies</option>
+            <option value="Creative Arts">Creative Arts</option>
+            <option value="Data Processing">Data Processing</option>
+            <option value="">Agricultural Science</option>
+            <option value="">Agricultural Science</option>
+            <option value="">Agricultural Science</option>
+            <option value="">Agricultural Science</option>
+            <option value="">Agricultural Science</option>
+            <option value="">Agricultural Science</option>
+        </select>
+        <button (click)="send()" [disabled]="this.studentarray[this.index].courses!=null" class="btn btn-primary m-2 p-2 w-25">Select courses</button>
+    </div>
+    <div *ngIf="this.studentarray[this.index].courses!=null">Courses already selected. You can only edit</div>
+
+</div>
+<div>
+    <h1 *ngIf="this.studentarray[this.index].courses!=null" class="p-5">View list of courses selected</h1>
+    <p *ngIf="this.studentarray[this.index].courses==null" >No courses selected yet</p>
+    <!-- <ul *ngFor="let course of this.studentarray[this.index].courses, let i=index">
+        <li>{{course}}</li>
+        <li><button class="btn btn-danger">Delete</button></li>
+        <li><a href="" class="btn btn-success">Update Courses</a></li>
+        
+    </ul> -->
+    <table class="table table-striped shadow p-4" *ngIf="this.studentarray[this.index].courses!=null">
+        <tr>
+            <td>No</td>
+            <td>List of courses</td>
+            <td>Delete Courses</td>
+        
+        </tr>
+        <hr>
+        <tr  *ngFor="let course of this.studentarray[this.index].courses, let i=index">
+         <td>{{i}}</td>
+         <td>{{course}}</td>
+         <td><button class="btn btn-danger m-2" (click)="del(i)">Delete</button></td>
+    
+        </tr>
+    </table>
+  <div>
+    
+    <button routerLink="add" class="btn btn-primary" [disabled]="this.studentarray[this.index].courses==null" >Add to courses</button>
+  </div>
+</div>

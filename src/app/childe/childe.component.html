@@ -1,0 +1,11 @@
+<p>childe works!</p>
+
+<div>
+  <div>
+    <input type="text" [(ngModel)]="msgparent" class="form-control">
+    Msg from child:<p>{{data}}</p>
+  </div> 
+  <div>
+    <app-childeone [msgtochild]="msgparent" (eventemit)="recievemsg($event)"></app-childeone>
+  </div> 
+</div>

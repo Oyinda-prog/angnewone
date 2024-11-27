@@ -1,0 +1,29 @@
+<p>templatevalidation works!</p>
+<div class="container">
+    <div class="col-6 mx-auto shadow p-4">
+        <!-- dirty,pristine,touched,untouched -->
+        <h3 class="text-primary text-center">Template Driven Form Validation</h3>
+        <form >
+<input type="text" class="form-control my-2" placeholder="Enter First Name" [(ngModel)]="firstname" name="fname" #fname="ngModel" minlength="5" [class.is-valid]="fname.dirty && fname.valid" [class.is-invalid]="fname.invalid && fname.dirty" > 
+<div *ngIf="fname.invalid && fname.dirty">
+   <span class="text-danger " *ngIf="fname.hasError('minlength')">The minimum character is five</span> 
+</div>
+<input type="text" class="form-control my-2" placeholder="Enter Lastname" [(ngModel)]="lastname" name="lname" #lname="ngModel" maxlength="14" minlength="14">
+<div *ngIf="lname.dirty && lname.invalid">
+<span *ngIf="lname.hasError('maxlength')">The maximum length required is 14 </span>
+<span class="text-danger">The phonenumber must be in the format +234</span>
+</div>
+<input type="text" class="form-control my-2" placeholder="Enter Phonenumber" [(ngModel)]="phonenumber" name="pnumber" #pnumber="ngModel">
+<input type="number" class="form-control my-2" placeholder="Enter Age" [(ngModel)]="age" min="18" name="age" #age="ngModel" required="true">
+<div *ngIf="age.invalid && age.dirty">
+<span class="text-danger" *ngIf="age.hasError('min')">User must not be below 18 years old</span>
+</div>
+<button class="btn btn-outline-primary w-100" disabled>Submit Form</button>
+        </form>
+{{fname.dirty}}
+{{fname.pristine}}
+{{fname.touched}}
+{{fname.untouched}} 
+    </div>
+
+</div>

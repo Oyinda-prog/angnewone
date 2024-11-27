@@ -1,0 +1,71 @@
+
+<nav class="nav bg-success p-2">
+  <a routerLink="/" class="nav-link text-white">Home Page|</a>
+  <a routerLink="notekeep" class="nav-link text-white">NoteKeep|</a>
+  <a routerLink="classmates" class="nav-link text-white">View Classmates|</a> 
+  <a routerLink="/studentsignin" class="nav-link text-white">Studentsignin|</a>
+  <a routerLink="profile_page" class="nav-link text-white">profile Page|</a>
+  <a routerLink="updatepassword" class="nav-link text-white">Update Password|</a>
+  <a routerLink="profilepicture" class="nav-link text-white">Update Profile Picture|</a>
+  <a routerLink="courses" class="nav-link text-white">Choose Courses|</a>
+  <a routerLink="receiptuploads" class="nav-link text-white">Upload Payment Receipts|</a>
+  <a><button (click)="logout()" class="nav-link text-white">Logout|</button></a>
+   <a routerLink="profilepicture" class="ms- 5" >
+    
+    <!-- <img  class="me-5" src="{{this.studentarray[this.index].image}}" alt="" width="120px" height="120px" style="border-radius: 100%;border: 2px solid black;border: 0px;"> -->
+    <img [src]="studentarray[index].image!=null ? studentarray[index].image : '/assets/images/download.jpeg'"
+    class="me-5"
+    alt=""
+    width="100px"
+    height="100px"
+    style="border-radius: 100%; border: 2px solid black; border: 0px;margin-left: 200px;">
+    <!-- <img *ngIf="studentarray[index].image != null else defaultImage"
+    [src]="studentarray[index].image"
+    class="me-5"
+    alt=""
+    width="120px"
+    height="120px"
+    style="border-radius: 100%; border: 2px solid black; border: 0px;">
+
+<ng-template #defaultImage>
+   <img src="/assets/images/download.jpeg"
+        class="me-5"
+        alt=""
+        width="120px"
+        height="120px"
+        style="border-radius: 100%; border: 0px;">
+</ng-template> -->
+
+  </a>
+
+
+</nav>
+<div class="container-fluid">
+  <div class="row">
+      <h2 class="text-center text-success mt-3"><marquee behavior="" direction="alternate">Welcome to your dashboard, <span>{{this.studentarray[this.index].fullname}}</span></marquee></h2>
+      <div class="col-6 mt-3">
+  <div class="shadow">
+  <hr>
+<div class="ms-3 p-3">
+  <h4 class="text-success text-center mb-5 ">HoneyWealth Institution</h4>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, corporis velit tempore, iusto unde maiores non eos natus et qui repellendus minus nam aliquam minima molestias doloremque deleniti? Tenetur, voluptas iusto! Neque soluta odio iste. Doloremque eius impedit dolor expedita, inventore sunt non reiciendis assumenda vero! Deleniti dolore est praesentium, impedit at rem autem adipisci similique porro, id perspiciatis ab cum vel blanditiis? Id laboriosam, doloremque sequi exercitationem, assumenda quibusdam est perspiciatis aut cum distinctio accusamus placeat? Odit, neque a ex nisi amet architecto consequuntur animi, corporis voluptatibus quia accusamus omnis dignissimos, incidunt iste. Atque commodi non quidem consectetur fugit necessitatibus molestiae vero, corporis id nobis quas nam laborum, eos iste ducimus fugiat. Illo, dolorum quam saepe repellat, corporis itaque aliquid sint maxime, ipsa ducimus sapiente! Officia vel voluptatibus eaque debitis dolorem? Quae ipsam fugit eaque nemo qui neque, molestias possimus? Cupiditate consectetur aperiam aut voluptatem dignissimos, enim quos harum accusantium illo fuga minus officia, eos est quae atque dicta? Architecto nam odit, nostrum eveniet sit iure temporibus illum quod commodi assumenda quasi optio hic praesentium dolores corrupti rerum saepe voluptatibus dolor! Eum ut non nam, at voluptatem hic optio corrupti minima animi harum dolores dolore quos nobis odit facere!
+<!-- <div class="d-flex p-3">
+<a href="/contact"><button class=" btn btn-primary me-2">Create Contact App</button></a>
+<a href="/contact"><button class=" btn btn-primary">Sign In</button></a>
+</div> -->
+</div>
+  </div>
+      </div>
+      <div class="col-6 p-5">
+  <img src="/assets/images/yadah.jpg" alt="" class="" style="width: 500px; height: 500px; border-radius: 100%; margin-left: 250px; margin-top: -20px;">
+      </div>
+  
+  </div>
+</div>
+
+
+
+
+
+
+ 

@@ -1,0 +1,26 @@
+<p>dashboard works!</p>
+<div class="container">
+    {{data}}
+<div class="col-10 mx-auto">
+<!-- <div class="row ">
+    <div class="col-7 shadow me-2" *ngFor="let item of arr" (click)="sends(item)" >
+        <p>{{item.Firstname}}</p>
+        <p>{{item.Lastname}}</p>
+<hr>
+    </div>
+    <div class="col-3 shadow">
+<app-profile></app-profile>
+    </div>
+
+</div> -->
+<div>
+    <input type="text" [(ngModel)]="firstname" >
+    <input type="file"  (change)="fileselected($event)" required>
+    <button (click)="sending()">send</button>
+</div>
+</div>
+</div>
+<div *ngFor="let item of array">
+    <p>{{item.firstname}}</p>
+    <img src="{{item.img}}" alt="" width="100px" height="100px" style="border-radius: 100%;" *ngIf="item.img">
+</div>

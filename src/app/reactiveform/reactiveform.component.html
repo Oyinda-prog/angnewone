@@ -1,0 +1,26 @@
+<p>reactiveform works!</p>
+<div class="container">
+    <div class="col-6 mx-auto shadow p-3">
+        <h1 class="text-success text-center">Reactive Form</h1>
+        <div>
+            <form [formGroup]="formone">
+<input type="text" class="form-control my-2" placeholder="Firstname" formControlName="fname" name="firstname" [class.is-valid]="formone.get('fname')?.valid" [class.is-invalid]="formone.get('fname')?.invalid && formone.get('fname')?.touched ">
+<div >
+<span class="text-danger" *ngIf="formone.get('fname')?.getError('required') && (formone.get('fname')?.touched ||formone.get('fname')?.dirty )">This field is required</span>
+<span class="text-danger" *ngIf="formone.get('fname')?.getError('minlength')">The minimum character is 3</span>
+<span class="text-danger" *ngIf="formone.get('fname')?.getError('maxlength')">The maximum character is 10</span>
+</div>
+<input type="text" class="form-control my-2" placeholder="Phonenumber" formControlName="pnumber" name="phonenumber">
+<input type="text" class="form-control my-2" placeholder="Email" formControlName="email" name="email">
+<input type="checkbox" formControlName="check" name="check" required>
+<div >
+    <span class="text-danger" *ngIf="!formone.value['check']"  >Please cehck the box</span>
+
+    </div>
+<button class="btn btn-outline-success w-100" (click)="reactive()" [disabled]="formone.invalid">Reactive Form</button>
+            </form>
+        </div>
+ 
+    </div>
+
+</div>

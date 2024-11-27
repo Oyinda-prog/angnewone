@@ -1,0 +1,44 @@
+<div class="container">
+     <div class="col-8 mx-auto shadow p-5">
+        <!-- <form [formGroup]="formtwo">
+            <input type="text" class="form-control my-2" placeholder="Title" formControlName="title" name="content" value="{{this.title}}">
+            <textarea name="content" id="" cols="30" rows="10" placeholder="Enter note......" class="form-control my-2 shadow-none" formControlName="content" value="{{this.content}}"></textarea>
+            <button class="btn btn-outline-success w-100" (click)="savechanges()" data-bs-dismiss="modal">Save Changes</button> -->
+
+
+        <h1 class="text-center text-success mb-3">Student Profile Information</h1>
+        <form >
+<input type="text" [(ngModel)]="fullname"  class="form-control my-3"  name="fname" id="full">
+<input type="text" [(ngModel)]="email" class="form-control my-3" placeholder="Email" name="email" >
+<input type="text" [(ngModel)]="phonenumber" class="form-control my-3" placeholder="Phone Number" name="phonenumber"  >
+<input type="date" [(ngModel)]="age" class="form-control my-3" placeholder="Age" name="age">
+<label for="" class="my-3">Select Class</label>
+        <select name="class"  class="form-select" (change)="checkchange()" [(ngModel)]="class">
+            <option value="Junior Secondary School 1 (JSS1)">Junior Secondary School 1 (JSS1)</option>
+            <option value="Junior Secondary School 2 (JSS2)">Junior Secondary School 2 (JSS2)</option>
+            <option value="Junior Secondary School 3 (JSS3)">Junior Secondary School 3 (JSS3)</option>
+            <option value="Senior Secondary School 1 (SSS1)">Senior Secondary School 1 (SSS1)</option>
+            <option value="Senior Secondary School 2 (SSS2)">Senior Secondary School 2 (SSS2)</option>
+            <option value="Senior Secondary School 3 (SSS3)">Senior Secondary School 3 (SSS3)</option>
+        </select>
+        <label for="" *ngIf="this.bool==true">Choose Department</label>
+        <select name="department" id="" class="form-select" *ngIf="this.bool==true" [(ngModel)]="department">
+            <option value="Science Department">Science Department</option>
+            <option value="Arts Department">Arts Department</option>
+            <option value="Commercial">Commercial</option>
+            
+        </select>
+        <label for="" class="mt-3">Registration Number</label>
+<input type="text"  class="form-control my-3" name="regnum" disabled [(ngModel)]="registrationnumber">
+<button class="btn btn-success w-100" (click)="editprofile()">Edit Profile</button>
+<button class="btn btn-outline-success w-25 mt-5" [routerLink]="['/studentdashboard']" 
+routerLinkActive="router-link-active" >Go back to dashboard</button>
+        </form>
+
+     </div>
+     
+</div>
+<p  [class]="this.msg=='Successfully updated'?'alert alert-success':'none' ">{{msg}}</p>
+
+
+

@@ -1,0 +1,93 @@
+<div>
+    <app-navbar></app-navbar>
+</div>
+
+<!-- <div class="container-fluid">
+<div class="row shadow my-5 p-3">
+    <div class="col-2 shadow">
+        <h1 class="text-center text-primary">Contact App</h1>
+        <input type="text" [(ngModel)]="firstname" placeholder="firstname" class="form-control my-2">
+        <input type="text" [(ngModel)]="lastname" placeholder="Lastname" class="form-control my-2">
+        <input type="text" [(ngModel)]="email" placeholder="Email" class="form-control my-2">
+        <input type="text" [(ngModel)]="phonenumber" placeholder="phonenumber" class="form-control my-2">
+        <button class="btn btn-outline-primary w-100 p-3" (click)="create()">Create Contact</button> 
+        <button class="btn btn-danger" (click)="creates()">creates</button>
+
+    </div>
+    
+    <div class="col-10 shadow" > 
+        <h1 class="text-center text-primary">Contact Details</h1>
+        <hr>
+        <div class="row" *ngFor="let contact of contactarray, let i=index">
+            <div class="col-3">
+                <p>{{contact.Firstname}}</p>
+            </div>
+            <div class="col-3">
+                 <p>{{contact.Lastname}}</p>  -->
+            <!-- </div>
+            <div class="col-2">
+                <p>{{contact.Email}}</p>  
+            </div>
+            <div class="col-3">
+   <button class="btn btn-outline-danger" (click)="del(i)">Delete</button>
+   <button class="btn btn-outline-primary " (click)="view(i)">Edit</button>
+   <a routerLink="view" (click)="viewcontact(i)"><button class="btn btn-outline-primary">view</button></a> -->
+   <!-- <a routerLink="edit/{{i}}"><button class="btn btn-success">Edit</button></a> -->
+    
+   <!-- <button (click)="check()" class="btn btn-primary">Edit Details</button> -->
+<!-- 
+</div>
+
+</div>
+</div>
+
+</div>
+</div> -->
+<div>{{this.msg}}</div> 
+<!-- <a href="/contact/edit/{{i}}"> <button class="btn btn-outline-success ">Edit</button></a> --> 
+<!-- <a routerLink="edit/{{i}}"><button class="btn btn-outline-success">Edit</button></a> -->
+<!-- <img src="assets/images/yadah.jpg" alt="" width="100px" height="100px">
+<img src="./" alt="" width="100px" height="100px"> -->
+<div class="container-fluid">
+    <div class="row shadow my-5 p-3">
+        <div class="col-2 shadow">
+    
+            <h1 class="text-center text-primary">Contact App</h1>
+            <input type="text" [(ngModel)]="firstname" placeholder="firstname" class="form-control my-2">
+            <input type="text" [(ngModel)]="lastname" placeholder="Lastname" class="form-control my-2">
+            <input type="text" [(ngModel)]="email" placeholder="Email" class="form-control my-2">
+            <input type="text" [(ngModel)]="phonenumber" placeholder="phonenumber" class="form-control my-2">
+            
+    
+            <button class="btn btn-danger" (click)="creates()">creates</button>
+    
+        </div>
+        
+        <div class="col-10 shadow" > 
+            <h1 class="text-center text-primary">Contact Details</h1>
+            <hr>
+            <div class="row" *ngFor="let contact of contactarray, let i=index">
+                <div class="col-3">
+                    <p>{{contact.Firstname}}</p>
+                </div>
+                <div class="col-3">
+                    <!-- <p>{{contact.Lastname}}</p>  -->
+                </div>
+                <div class="col-2">
+                    <p>{{contact.Email}}</p>  
+                </div>
+                <div class="col-3">
+       <button class="btn btn-outline-danger" (click)="delety(i)">Delete</button>
+       <a routerLink="view"><button class="btn btn-outline-primary " (click)="viewcont(i)">view contact</button></a>
+       <a routerLink="view" (click)="viewcontact(i)"><button class="btn btn-outline-primary">view</button></a>
+       <!-- <a routerLink="edit/{{i}}"><button class="btn btn-success">Edit</button></a> -->
+        
+       <!-- <button (click)="check()" class="btn btn-primary">Edit Details</button> -->
+    
+    </div>
+    
+    </div>
+    </div>
+    
+    </div>
+    </div>

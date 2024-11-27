@@ -1,0 +1,34 @@
+<p>adminreceiptpage works!</p>
+<div class="col-9 mx-auto">
+    <!-- <h2 class="text-success text-center shadow p-4 m-5">{{msg}}</h2> -->
+    <h1 class="text-center text-success m-5" >View Receipts</h1>
+    <table class="table table-striped table-bordered" >
+        <tr class="text-success">
+            <th>Serial Number</th>
+            <th>Registration Number</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Receipts</th>
+            <th>UniqueID</th>
+            <th>Amount</th>
+            <th>Approve Receipt</th>
+            <th></th>
+        </tr>
+    <tr class="text-success" *ngFor="let receipt of receiptarray let i=index">
+        <td>{{i+1}}</td>
+        <td>{{receipt.registrationnumber}}</td>
+        <td>{{receipt.date}}</td>
+        <td>{{receipt.time}}</td>
+        <td [class]="receipt.status=='Unapproved'?'btn btn-danger':'btn btn-sucess' ">{{receipt.status}}</td>
+
+        <td><img src="{{receipt.receipt}}" alt="" width="200px" height="200px" style="border-radius: 100%;"></td> <td>{{receipt.uniqueid}}</td>
+        <td><button (click)="approve(i)">Approve Receipt</button></td>
+
+    </tr>
+</table>
+
+
+
+
+</div>

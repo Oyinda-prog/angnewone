@@ -1,0 +1,13 @@
+<div class="container">
+    <h5 class="text-success text-center">Signin Page|</h5>
+    <div class="col-8 mx-auto  shadow p-3">
+<input type="text" placeholder="Enter Email" [(ngModel)]="email" class="form-control my-2 shadow-none" >
+<input type="text" placeholder="Enter Password" [(ngModel)]="password" class="form-control my-2 shadow-none" >
+<button class="btn btn-outline-success w-25" (click)="signin()">Login</button>
+<hr>
+<h6 class="text-center text-danger">{{msg}}</h6>
+<p>Forget password? <a routerLink="/password_reset">reset password</a></p>
+
+    </div>
+
+</div>

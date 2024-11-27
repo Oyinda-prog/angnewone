@@ -1,0 +1,15 @@
+
+<div class="container">
+<app-navbar></app-navbar>
+    <div class="col-8 mx-auto shadow mb-5 p-4">
+ <input type="text" class="form-control my-2 shadow-none" [(ngModel)]="msg" >
+ <button class="btn btn-primary w-100" (click)="upd()">Update Behaviorsubject</button>
+<hr>
+<div>
+    {{data}}
+</div>
+    </div>
+<div class="col-8 mx-auto shadow">
+<app-childbehaviorsub></app-childbehaviorsub>
+</div>
+</div>
